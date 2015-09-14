@@ -28,6 +28,7 @@ gem 'railsbricks'
 
 # Bootstrap 3: https://github.com/twbs/bootstrap-sass
 gem 'bootstrap-sass', '3.3.5.1'
+gem 'twitter-bootstrap-rails'
 
 group :development, :test do
   gem 'byebug', '6.0.2'
