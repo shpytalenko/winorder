@@ -86,7 +86,6 @@ class PullGoogleSheet
    
 
     #insert_file(client, drive)
-  binding.pry
   #arr_json = arr.to_json 
   return arr
   end
