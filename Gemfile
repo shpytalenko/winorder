@@ -10,7 +10,7 @@ gem 'jquery-rails', '4.0.4'
 gem 'turbolinks', '2.5.3'
 gem 'jbuilder', '2.3.1'
 gem 'bcrypt', '3.1.10'
-
+gem 'kristin'
 # Necessary for Windows OS (won't install on *nix systems)
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
@@ -29,11 +29,17 @@ gem 'railsbricks'
 # Bootstrap 3: https://github.com/twbs/bootstrap-sass
 gem 'bootstrap-sass', '3.3.5.1'
 gem 'twitter-bootstrap-rails'
+gem 'pipedrive-ruby'
+gem 'google_drive'
+gem 'signet'#, github: 'krautcomputing/signet', branch: 'token_credential_uri_as_hash'
+gem 'google-api-client'
+gem 'roo'
+gem 'roo-google'
 
 group :development, :test do
   gem 'byebug', '6.0.2'
   gem 'web-console', '2.2.1'
-
+  gem 'pry'
   # Figaro: https://github.com/laserlemon/figaro
   gem 'figaro', '1.1.1'
 
