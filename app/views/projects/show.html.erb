@@ -2,6 +2,8 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
+<!--iframe class="col-md-12"  src="https://docs.google.com/spreadsheets/d/1kyWb9jylT61uW9GptKzskrew1jfMCxesct7E7O7SYhs/pub?gid=1951684584&single=true&output=pdf"></iframe>
+<iframe src="https://docs.google.com/spreadsheets/d/1kyWb9jylT61uW9GptKzskrew1jfMCxesct7E7O7SYhs/pubhtml?gid=573729869&amp;single=true&amp;widget=true&amp;headers=false"></iframe--!>
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
@@ -11,7 +13,19 @@
   <dt><strong><%= model_class.human_attribute_name(:data) %>:</strong></dt>
   <dd><%= @project.data %></dd>
 </dl>
-
+<%- @arr.each do |row| %>
+  <div class="row well">
+  <div class="col-md-4">
+    <%= image_tag row.first, :class=>"img-thumbnail" %>
+  </div>
+  <div class="col-md-4">
+    <span class=""><%=raw row[1] %> </span>   
+  </div>
+  <div class="col-md-4">
+    <span><%=raw row[2] %> </span>   
+  </div>
+  </div>
+<% end %>
 <%= link_to t('.back', :default => t("helpers.links.back")),
               projects_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),

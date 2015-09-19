@@ -10,7 +10,7 @@ gem 'jquery-rails', '4.0.4'
 gem 'turbolinks', '2.5.3'
 gem 'jbuilder', '2.3.1'
 gem 'bcrypt', '3.1.10'
-gem 'kristin'
+gem "hstore_accessor", '0.9.0'
 # Necessary for Windows OS (won't install on *nix systems)
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 

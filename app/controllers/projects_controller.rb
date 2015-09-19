@@ -10,6 +10,9 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @service= PullGoogleSheet.new
+    @arr = @service.pull(@project.name)
+    #@arr = JSON.parse(Project.last.data["arr_json"])
   end
 
   # GET /projects/new
