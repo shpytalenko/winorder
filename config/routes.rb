@@ -1,6 +1,9 @@
 Winorder::Application.routes.draw do
-  resources :projects
-  resources :projects
+  resources :projects do
+    member do 
+      get "load_data"
+    end
+  end
   root "pages#home"
   get "home", to: "pages#home", as: "home"
   get "inside", to: "pages#inside", as: "inside"

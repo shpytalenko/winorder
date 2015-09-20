@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_project, only: [:show, :edit, :update, :destroy, :load_data]
   before_action :authenticate_user!
   # GET /projects
   # GET /projects.json
@@ -10,9 +10,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
-    @service= PullGoogleSheet.new
-    @arr = @service.pull(@project.name)
-    #@arr = JSON.parse(Project.last.data["arr_json"])
+    @arr = JSON.parse(@project.data["sheet_data"]) rescue []
   end
 
   # GET /projects/new
@@ -64,6 +62,19 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def load_data
+    result = @project.load_sheet_data
+    
+    respond_to do |format|
+      if result == true
+        format.html { redirect_to @project, notice: 'Project was successfully created.' }
+        format.json { render :show, status: :created, location: @project }
+      else
+        format.html { render :new }
+        format.json { render json: @project.errors, status: :unprocessable_entity }
+      end
+    end
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
