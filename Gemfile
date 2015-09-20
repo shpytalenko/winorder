@@ -40,6 +40,10 @@ group :development, :test do
   gem 'byebug', '6.0.2'
   gem 'web-console', '2.2.1'
   gem 'pry'
+  gem 'bullet'
+  gem 'rack-mini-profiler'
+  gem 'metric_fu'
+  gem 'rubocop'
   # Figaro: https://github.com/laserlemon/figaro
   gem 'figaro', '1.1.1'
 
