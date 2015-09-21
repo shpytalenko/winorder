@@ -7,8 +7,9 @@
 </div>
 <!--iframe class="col-md-12"  src="https://docs.google.com/spreadsheets/d/1kyWb9jylT61uW9GptKzskrew1jfMCxesct7E7O7SYhs/pub?gid=1951684584&single=true&output=pdf"></iframe>
 <iframe src="https://docs.google.com/spreadsheets/d/1kyWb9jylT61uW9GptKzskrew1jfMCxesct7E7O7SYhs/pubhtml?gid=573729869&amp;single=true&amp;widget=true&amp;headers=false"></iframe--!>
-
-<dl class="dl-horizontal">
+  <div class="row">
+    <div class="col-md-8">
+        <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @project.name %></dd>
   
@@ -26,6 +27,25 @@
   </div>
   </div>
 <% end %>
+</div>
+<div class="col-md-4">
+<div class="panel panel-info">
+  <div class="panel-heading"><strong>Pipedrive Deal Info</strong></div>
+  <div class="panel-body">
+      <%- if @project.data["pipedrive_data"] %>
+        <dl class="dl-horizontal">
+          <%- JSON.parse(@project.data["pipedrive_data"]).first["details"].each do |key,value| %>
+          
+          <dt><strong><%= key %>:</strong></dt>
+          <dd><%= value %></dd>
+        <% end %>
+        </dl>
+        <% end %>
+      
+  </div>
+</div>
+      </div>
+      </div>
 <%= link_to t('.back', :default => t("helpers.links.back")),
               projects_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),

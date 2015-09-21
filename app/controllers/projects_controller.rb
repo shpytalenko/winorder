@@ -64,7 +64,7 @@ class ProjectsController < ApplicationController
 
   def load_data
     result = @project.load_sheet_data
-    
+             @project.load_pipedrive_data  
     respond_to do |format|
       if result == true
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
