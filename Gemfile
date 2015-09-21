@@ -11,6 +11,7 @@ gem 'turbolinks', '2.5.3'
 gem 'jbuilder', '2.3.1'
 gem 'bcrypt', '3.1.10'
 gem "hstore_accessor", '0.9.0'
+gem 'httparty'
 # Necessary for Windows OS (won't install on *nix systems)
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
@@ -29,7 +30,9 @@ gem 'railsbricks'
 # Bootstrap 3: https://github.com/twbs/bootstrap-sass
 gem 'bootstrap-sass', '3.3.5.1'
 gem 'twitter-bootstrap-rails'
-gem 'pipedrive-ruby'
+#gem 'pipedrive-ruby', github: 'Fundbase/pipedrive-ruby'
+#gem 'pipedrive.rb'
+gem 'PipedrivePUT'
 gem 'google_drive'
 gem 'signet'#, github: 'krautcomputing/signet', branch: 'token_credential_uri_as_hash'
 gem 'google-api-client'
