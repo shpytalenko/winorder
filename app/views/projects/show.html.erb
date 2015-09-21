@@ -32,7 +32,7 @@
 <div class="panel panel-info">
   <div class="panel-heading"><strong>Pipedrive Deal Info</strong></div>
   <div class="panel-body">
-      <%- if @project.data["pipedrive_data"] %>
+      <%- if @project.data["pipedrive_data"] and @project.data["pipedrive_data"]!= "null" %>
         <dl class="dl-horizontal">
           <%- JSON.parse(@project.data["pipedrive_data"]).first["details"].each do |key,value| %>
           
