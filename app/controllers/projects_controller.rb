@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy, :load_data]
   before_action :authenticate_user!
+  skip_before_filter  :verify_authenticity_token, only: [:pipedrive_endpoint]
   # GET /projects
   # GET /projects.json
   def index
