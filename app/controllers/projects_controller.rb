@@ -62,6 +62,9 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def pipedrive_endpoint
+    binding.pry
+  end
   def load_data
     result = @project.load_sheet_data
              @project.load_pipedrive_data  

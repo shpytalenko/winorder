@@ -2,6 +2,7 @@ Winorder::Application.routes.draw do
   resources :projects do
     member do 
       get "load_data"
+      post "pipedrive_endpoint"
     end
   end
   root "pages#home"
