@@ -1,4 +1,9 @@
 Winorder::Application.routes.draw do
+  resources :push_events do
+    collection do 
+      post "pipedrive_endpoint"
+    end
+  end
   resources :projects do
     collection do
       post "pipedrive_endpoint"
