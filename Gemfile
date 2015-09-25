@@ -30,6 +30,8 @@ gem 'railsbricks'
 # Bootstrap 3: https://github.com/twbs/bootstrap-sass
 gem 'bootstrap-sass', '3.3.5.1'
 gem 'twitter-bootstrap-rails'
+gem 'bootstrap-kaminari-views'
+gem 'awesome_print'
 #gem 'pipedrive-ruby', github: 'Fundbase/pipedrive-ruby'
 #gem 'pipedrive.rb'
 gem 'PipedrivePUT'
