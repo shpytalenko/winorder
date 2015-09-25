@@ -6,22 +6,21 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:data) %></th>
-      <th><%= model_class.human_attribute_name(:body) %></th>
+      <th>Action</th>
+      <th>Object</th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @push_events.each do |push_event| %>
+      <% hash = JSON.parse(push_event.data["request"]) %>
       <tr>
         <td><%= link_to push_event.id, push_event_path(push_event) %></td>
-        <td><%= push_event.data %></td>
-        <td><%= push_event.body %></td>
+        <td><%= hash["meta"]["action"] %></td>
+        <td><%= hash["meta"]["object"] %></td>
         <td><%=l push_event.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_push_event_path(push_event), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       push_event_path(push_event),
                       :method => :delete,
@@ -33,6 +32,4 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_push_event_path,
-            :class => 'btn btn-primary' %>
+

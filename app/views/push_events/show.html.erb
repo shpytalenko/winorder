@@ -6,14 +6,10 @@
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:data) %>:</strong></dt>
   <dd><%= @push_event.data %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:body) %>:</strong></dt>
-  <dd><%= @push_event.body %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               push_events_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_push_event_path(@push_event), :class => 'btn btn-default' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               push_event_path(@push_event),
               :method => 'delete',
