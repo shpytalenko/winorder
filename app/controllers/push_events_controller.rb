@@ -4,7 +4,7 @@ class PushEventsController < ApplicationController
   
   
   def pipedrive_endpoint
-    PushEvent.create(:data["request"] => params.to_json) 
+    PushEvent.create(:data => {'request' => params.to_json}) 
     head :ok, content_type: "text/html"
   end
   
