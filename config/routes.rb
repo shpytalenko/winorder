@@ -12,7 +12,7 @@ Winorder::Application.routes.draw do
       get "load_data"
     end
   end
-  root "pages#home"
+  root "push_events#index"
   get "home", to: "pages#home", as: "home"
   get "inside", to: "pages#inside", as: "inside"
   get "/contact", to: "pages#contact", as: "contact"

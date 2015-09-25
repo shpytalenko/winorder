@@ -11,7 +11,7 @@ class PushEventsController < ApplicationController
   # GET /push_events
   # GET /push_events.json
   def index
-    @push_events = PushEvent.all
+    @push_events = PushEvent.all.order("created_at DESC").page params[:page]
   end
 
   # GET /push_events/1

@@ -1,8 +1,13 @@
 <%- model_class = PushEvent -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1>Dashboard <small>logs, activity, statistic</small></h1>
 </div>
-<table class="table table-striped">
+<div class="col-md-6">Some data </div>
+<div class="col-md-6 well">
+  
+  <h3 class="text-info">Pipedrive activity logs</h3>
+  <%= paginate @push_events, :theme => 'twitter-bootstrap-3' %>
+  <table class="table table-striped">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
@@ -19,7 +24,7 @@
         <td><%= link_to push_event.id, push_event_path(push_event) %></td>
         <td><%= hash["meta"]["action"] rescue '-'%></td>
         <td><%= hash["meta"]["object"] rescue '-'%></td>
-        <td><%=l push_event.created_at %></td>
+        <td><span class="text-muted bold strong"><%=  time_ago_in_words(push_event.created_at) %>ago</span></td>
         <td>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       push_event_path(push_event),
@@ -31,5 +36,7 @@
     <% end %>
   </tbody>
 </table>
+<%= paginate @push_events, :theme => 'twitter-bootstrap-3' %>
+</div>
 
 
