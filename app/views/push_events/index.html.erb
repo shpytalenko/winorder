@@ -14,11 +14,11 @@
   </thead>
   <tbody>
     <% @push_events.each do |push_event| %>
-      <% hash = JSON.parse(push_event.data["request"]) %>
+      <% hash = JSON.parse(push_event.data["request"]) rescue nil %>
       <tr>
         <td><%= link_to push_event.id, push_event_path(push_event) %></td>
-        <td><%= hash["meta"]["action"] %></td>
-        <td><%= hash["meta"]["object"] %></td>
+        <td><%= hash["meta"]["action"] rescue '-'%></td>
+        <td><%= hash["meta"]["object"] rescue '-'%></td>
         <td><%=l push_event.created_at %></td>
         <td>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
