@@ -1,10 +1,9 @@
 class PushEventsController < ApplicationController
   before_action :set_push_event, only: [:show, :edit, :update, :destroy]
-
+  skip_before_filter  :verify_authenticity_token, only: [:pipedrive_endpoint]
   
   
   def pipedrive_endpoint
-    binding.pry
     PushEvent.create(:data["request"] => params.to_json) 
     head :ok, content_type: "text/html"
   end
