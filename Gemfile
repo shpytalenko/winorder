@@ -18,6 +18,13 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 # Kaminari: https://github.com/amatsuda/kaminari
 gem 'kaminari', '0.16.3'
 
+# rails specific capistrano funcitons
+
+# integrate bundler with capistrano
+
+# if you are using RBENV
+
+# Use the Unicorn app server
 # Friendly_id: https://github.com/norman/friendly_id
 gem 'friendly_id', '5.1.0'
 
@@ -59,6 +66,15 @@ group :development, :test do
   gem 'annotate', '2.6.10'
 end
 
+group :development do
+    gem 'capistrano',         require: false
+    gem 'capistrano-rvm',     require: false
+    gem 'capistrano-rails',   require: false
+    gem 'capistrano-bundler', require: false
+    gem 'capistrano3-puma',   require: false
+end
+
+gem 'puma'
 
 # PostgreSQL
 gem 'pg'

@@ -65,6 +65,10 @@ class ProjectsController < ApplicationController
 
   def pipedrive_endpoint
     binding.pry
+     project = Project.find_or_create_by_pipedrive_id(params["meta"]["id"])   
+     project["data"]["pipedrive_data"] = params.to_json
+     project.save
+    head :ok, content_type: "text/html"
   end
   def load_data
     result = @project.load_sheet_data

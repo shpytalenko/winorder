@@ -83,7 +83,7 @@ class PullGoogleSheet
    arr.each_with_index do |row, index|
     row.first << spec[index+2,5]
    end
-   
+   binding.pry
 
     #insert_file(client, drive)
   #arr_json = arr.to_json 
