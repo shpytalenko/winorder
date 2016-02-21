@@ -298,7 +298,6 @@ GEM
       ruby-progressbar
     rails_serve_static_assets (0.0.4)
     rails_stdout_logging (0.0.4)
-    railsbricks (3.2.8)
     railties (4.2.4)
       actionpack (= 4.2.4)
       activesupport (= 4.2.4)
@@ -440,7 +439,6 @@ DEPENDENCIES
   rack-mini-profiler
   rails (= 4.2.4)
   rails_12factor
-  railsbricks
   redcarpet (= 3.3.2)
   roo
   roo-google
@@ -456,4 +454,4 @@ DEPENDENCIES
   web-console (= 2.2.1)
 
 BUNDLED WITH
-   1.10.5
+   1.11.2

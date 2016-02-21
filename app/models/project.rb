@@ -4,6 +4,13 @@ class Project < ActiveRecord::Base
   validates :name, uniqueness: true, presence: true
   belongs_to :user
   
+  def load_from_yml
+    list = YAML::load_file('results.yml')
+    list.each do |el|
+      Project.create(:data => el.to_s, :name => "#{el[:firstname]} #{ el[":lastname"] } ")
+    end
+  end
+  
   def load_sheet_data
     drive = PullGoogleSheet.new
     sheet_data = drive.pull(self.name)

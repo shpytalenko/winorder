@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.2'
+ruby '2.2.4'
 
 # Standard Rails gems
 gem 'rails', '4.2.4'
@@ -32,7 +32,7 @@ gem 'friendly_id', '5.1.0'
 gem 'font-awesome-sass', '4.4.0'
 
 # RailsBricks: http://www.railsbricks.net
-gem 'railsbricks'
+#gem 'railsbricks'
 
 # Bootstrap 3: https://github.com/twbs/bootstrap-sass
 gem 'bootstrap-sass', '3.3.5.1'
